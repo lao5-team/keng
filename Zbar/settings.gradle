@@ -1,0 +1,13 @@
+include ':app'
+
+
+// 其他project的lib
+def projectModules = [
+
+]
+
+for (module in projectModules) {
+    String[] model = module.split('/');
+    include(':' + model[2])
+    project(':' + model[2]).projectDir = new File('../../' + module)
+}

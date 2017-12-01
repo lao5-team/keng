@@ -1,0 +1,55 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:background="#c8c8c8"
+        android:id="@+id/titleView"
+        >
+        <TextView
+            android:id="@+id/back"
+            android:layout_width="wrap_content"
+            android:layout_height="48dp"
+            android:padding="10dp"
+            android:gravity="center"
+            android:text="@string/cancel"
+            android:textColor="@android:color/holo_blue_light"
+            android:textSize="16sp"
+            />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:gravity="center"
+            android:text="@string/qrcode_scan"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            android:layout_centerInParent="true"
+            />
+
+    </RelativeLayout>
+
+
+
+    <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:id="@+id/container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/titleView"
+        >
+
+        <SurfaceView
+            android:id="@+id/surface_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <com.yihao.test.view.ViewfinderView
+            android:id="@+id/finder_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+</RelativeLayout>

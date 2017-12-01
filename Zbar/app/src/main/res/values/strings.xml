@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">lib-qrcode</string>
+    <string name="scan_text_top">请扫描xxxx二维码</string>
+    <string name="scan_text1">将二维码/条码放入框内，即可自动扫描</string>
+    <string name="turn_light_failed">闪光灯开启失败</string>
+    <string name="scan_text2">我的二维码</string>
+    <string name="cancel">取消</string>
+    <string name="qrcode_scan">二维码扫描</string>
+    <integer name="viewfinder_border_width">4</integer>
+    <integer name="viewfinder_border_length">60</integer>
+    <string name="title_activity_main">MainActivity</string>
+</resources>

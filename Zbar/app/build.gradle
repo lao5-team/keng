@@ -1,0 +1,50 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compileSDKVer
+    buildToolsVersion rootProject.ext.buildToolsVer
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSDKVer
+        targetSdkVersion rootProject.ext.targetSDKVer
+        versionCode 0
+        versionName PROJECT_VERSION
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_7
+        targetCompatibility JavaVersion.VERSION_1_7
+    }
+    lintOptions {
+        abortOnError false
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDirs = ['libs']
+        }
+    }
+
+    externalNativeBuild {
+        ndkBuild {
+            path 'jni/Android.mk'
+        }
+    }
+}
+
+repositories {
+    flatDir {
+        dirs 'libs'
+    }
+}
+
+dependencies {
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    dependencies { compile 'com.android.support:support-annotations:24.2.0' }
+    compile 'com.android.support:support-v4:27.0.1'
+}
